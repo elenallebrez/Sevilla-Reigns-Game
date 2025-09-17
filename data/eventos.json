@@ -1,0 +1,486 @@
+[
+  {
+    "id": "real_balompedico_sevillano",
+    "title": "Real Balompédico Sevillano",
+    "description": "Sevilla FC y Betis proponen un equipo conjunto: Real Balompédico Sevillano.",
+    "image": "SevillaBetis.jpg",
+    "options": [
+      {
+        "text": "¡Viva el fútbol!",
+        "effects": { "people": -15}
+      },
+      {
+        "text": "Una vergüenza internacional.",
+        "effects": {"people": 5}
+      }
+    ]
+  },{
+    "id": "mas_rebujito",
+    "title": "Ponme otra jarra",
+    "description": "Se quiere prohibir la cerveza en la calle durante la Feria para priorizar el rebujito.",
+    "image": "mas_rebujito.png",
+    "options": [
+      {
+        "text": "Que gran idea, ¡rebujito para todos!",
+        "effects": { "people": -5, "money": -5, "army": 5 },
+        "desbloquea": ["cruzcampo_bancarrota"]
+      },
+      {
+        "text": "No, que cada uno beba lo que quiera.",
+        "effects": {"people": 5,"money": 5, "army": 5}
+      }
+    ]
+  },{
+    "id": "cruzcampo_bancarrota",
+    "title": "Cerveza a precio de oro",
+    "requisitos": ["mas_rebujito"],
+    "description": "Por la prohibicion del consumo de cerveza en la feria, Cruzcampo esta a punto de quebrar.",
+    "image": "cruzcampo_bancarrota.png",
+    "options": [
+      {
+        "text": "Tenemos que ayudar a Cruzcampo.",
+        "effects": { "people": 10, "money": -10}
+      },
+      {
+        "text": "Saldran de esta",
+        "effects": {"people": -100}
+      }
+    ]
+  },{
+    "id": "sevilla_finalista",
+    "title": "El Sevilla llega a la final de la UEFA",
+    "description": "El Sevilla FC llega a la final de la UEFA y se propone dar ayudas a los sevillistas para que viajen.",
+    "image": "sevilla_finalista.png",
+    "options": [
+      {
+        "text": "¡Viva el futbol!",
+        "effects": { "people": 10, "money": -10},
+        "desbloquea": ["sevilla_ganador"]
+      },
+      {
+        "text": "No, mejor que cada uno celebre en su casa.",
+        "effects": {"people": -5,"army": 10}
+      }
+    ]
+  },{
+    "id": "carrera_oficial",
+    "title": "Cambio en carrera oficial",
+    "description": "Se propone cambiar el recorrido de la carrera oficial de Semana Santa.",
+    "image": "carrera_oficial.png",
+    "options": [
+      {
+        "text": "Perfecto, mas devocion.",
+        "effects": { "religion":-100}
+      },
+      {
+        "text": "Eso no es tradicion.",
+        "effects": {"religion": 5}
+      }
+    ]
+  },{
+    "id": "mercadillo_puente_triana",
+    "title": "Nuevo mercadillo",
+    "description": "El Puente de Triana será peatonal los domingos para organizar mercadillos",
+    "image": "mercadillo.png",
+    "options": [
+      {
+        "text": "Di que si, mas mercadillos.",
+        "effects": { "people": 15, "money": 10, "army": 5 }
+      },
+      {
+        "text": "No, mejor no.",
+        "effects": {"people": -5,"money": -5}
+      }
+    ]
+  },{
+    "id": "mover_feria",
+    "title": "Cambio de recinto",
+    "description": "Proponen trasladar la Feria al Parque de María Luisa para más sombra.",
+    "image": "feria_PML.png",
+    "options": [
+      {
+        "text": "Aceptar el cambio.",
+        "effects": { "people": -100, "money": -100, "army": -100 }
+      },
+      {
+        "text": "Mantener ubicación.",
+        "effects": {"people": 5,"army": 5}
+      }
+    ]
+  },{
+    "id": "desfile_flamenco",
+    "title": "Moda flamenca",
+    "description": "Quieren organiar un desfile de moda flamenca en la Avenida de la Constitucion.",
+    "image": "moda_flamenca.png",
+    "options": [
+      {
+        "text": "Si, viva la moda flamenca",
+        "effects": { "people": 5,"army": 10 }
+      },
+      {
+        "text": "No, ya tienen suficiente con SIMOF",
+        "effects": {"people": -5,"army": -5}
+      }
+    ]
+  },{
+    "id": "semana_santa_pantallas",
+    "title": "Pantallas en Semana Santa",
+    "description": "Se propone instalar pantallas gigantes en la Plaza de España para ver las procesiones.",
+    "image": "pantallasSS.png",
+    "options": [
+      {
+        "text": "Si, asi todos pueden disfrutar.",
+        "effects": { "religion":10,"people": 5, "money": -10, "army": -10 }
+      },
+      {
+        "text": "No, es una falta de respeto.",
+        "effects": {"religion":-10,"people": -5,"army": 5}
+      }
+    ]
+  },{
+    "id": "plaza_espana_privada",
+    "title": "Plaza España privada",
+    "description": "Se propone privatizar la Plaza de España y cobrar entrada.",
+    "image": "privatizar.png",
+    "options": [
+      {
+        "text": "Si, que paguen por disfrutarla.",
+        "effects": { "people": -5, "money": 15, "army": -10 }
+      },
+      {
+        "text": "No, es un patrimonio publico.",
+        "effects": {"people": 5,"army": 10}
+      }
+    ]
+  },{
+    "id": "toldos",
+    "title": "¡Que calor!",
+    "description": "Se propone poner toldos en las calles para proteger del sol a los viandantes.",
+    "image": "toldos.png",
+    "options": [
+      {
+        "text": "¡Perfecto, todos a la sombra!",
+        "effects": { "people": 10, "money": -5, "army": 5 }
+      },
+      {
+        "text": "No, mejor que cada uno lleve un sombrero.",
+        "effects": {"people": -10, "army": -5}
+      }
+    ]
+  },{
+    "id": "autobuses_matalascañas",
+    "title": "Vacaciones en Matalascañas",
+    "description": "Se propone un servicio de autobuses a Matalascañas para las vacaciones de verano.",
+    "image": "matalascanas.png",
+    "options": [
+      {
+        "text": "¡Genial, todos a la playa!",
+        "effects": { "people": 10, "money": -5, "army": 5},
+        "desbloquea": ["protestas_laAntilla"]
+      },
+      {
+        "text": "No, mejor que cada uno se busque la vida.",
+        "effects": {"people": -10, "army": -5}
+      }
+    ]
+  },{
+    "id": "ayuda_chirigota",
+    "title": "Carnavales de Sevilla",
+    "description": "Una chirigota quiere actuar en la Plaza Nueva. ¿Lo permites?",
+    "image": "chirigota.png",
+    "options": [
+      {
+        "text": "Si, viva la alegria.",
+        "effects": { "people": 10, "money": 10, "army": 10 },
+        "desbloquea": ["evento_carnaval_cadiz"]
+      },
+      {
+        "text": "No, que se vayan a Cadiz.",
+        "effects": {"people": -10,"army": -5}
+      }
+    ]
+  },{
+    "id": "linea3_metro",
+    "title": "Metro de Sevilla",
+    "description": "Quieren destinar parte del presupuesto a la construccion de una nueva linea de metro.",
+    "image": "metro3.png",
+    "options": [
+      {
+        "text": "Es una idea genial.",
+        "effects": { "people": 15, "money": -10},
+        "desbloquea": ["protestas_metro"]
+      },
+      {
+        "text": "Centremonos en las que se estan construyendo.",
+        "effects": {"people": -10}
+      }
+    ]
+  },{
+    "id": "teleferico",
+    "title": "Teleferico de Sevilla",
+    "description": "Proponen instalar un teleferico desde Triana hasta Nervion.",
+    "image": "teleferico.png",
+    "options": [
+      {
+        "text": "Es una idea genial.",
+        "effects": { "people": 5, "money": -5, "army": 15}
+      },
+      {
+        "text": "Demasiado moderno.",
+        "effects": {"people": -5,"army": -15}
+      }
+    ]
+  },{
+    "id": "ampliacion_publicas",
+    "title": "Ampliacion de la feria",
+    "description": "Se propone ampliar la Feria de Abril",
+    "image": "SevillaBetis.jpg",
+    "options": [
+      {
+        "text": "¡Ole, ole y ole!",
+        "effects": { "people": 20, "money": 10, "army": 15 }
+      },
+      {
+        "text": "La feria se queda como esta.",
+        "effects": {"people": -10,"army": -5}
+      }
+    ]
+  },{
+    "id": "casetas_publicas",
+    "title": "Casetas publicas",
+    "description": "Se propone que todas las casetas de la Feria sean publicas y gratuitas.",
+    "image": "feriaPublica.png",
+    "options": [
+      {
+        "text": "¡Ole, ole y ole!",
+        "effects": { "people": -100, "money": -100, "army": 100 }
+      },
+      {
+        "text": "La feria se queda como esta.",
+        "effects": {"army": -20}
+      }
+    ]
+  },{
+    "id": "cambio_de_recorrido",
+    "title": "Cambio de recorrido",
+    "description": "Una hermandad quiere recorrer toda la ciudad en Semana Santa.",
+    "image": "cambio_de_recorrido.png",
+    "options": [
+      {
+        "text": "Perfecto, mas devocion.",
+        "effects": { "religion": 15, "people": 10, "money": -5, "army": 10 }
+      },
+      {
+        "text": "No, mejor no.",
+        "effects": { "religion": -15, "people": -10, "money": 10}
+      }
+    ]
+  },
+  {
+    "id": "festival_flamenco",
+    "title": "Festival Flamenco Fusión",
+    "description": "Montas un festival con artistas locales y estrellas internacionales.",
+    "image": "SevillaBetis.jpg",
+    "options": [
+      {
+        "text": "¡El arte no tiene fronteras!",
+        "effects": {"people": 15, "money": 10, "army": 5 }
+      },
+      {
+        "text": "Esto no es puro...",
+        "effects": { "people": -5}
+      }
+    ]
+  },
+  {
+    "id": "museo_betis",
+    "title": "Campeonato Mundial de Rebujito",
+    "description": "Traes competidores de todo el mundo para hacer el rebujito perfecto.",
+    "image": "campeonatoRebujito.png",
+    "options": [
+      {
+        "text": "¡Brindemos!",
+        "effects": {"people": 5, "money": 10, "army": 5 }
+      },
+      {
+        "text": "Una vergüenza internacional.",
+        "effects": { "people": -10 }
+      }
+    ]
+  },
+  {
+    "id": "casetas_ac_wifi",
+    "title": "Casetas con A/C y wifi",
+    "description": "Reformas la Feria con comodidades del siglo XXI.",
+    "image": "casetas_ac_wifi.png",
+    "options": [
+      {
+        "text": "Tecnología al servicio del jolgorio.",
+        "effects": { "religion": 5, "people": 10, "money": -5, "army": 5 }
+      },
+      {
+        "text": "Eso es para modernos.",
+        "effects": { "people": -5 }
+      }
+    ]
+  },
+  {
+    "id": "lunes_post_feria",
+    "title": "Lunes post-feria como festivo",
+    "description": "Legalizas el descanso tras la semana grande.",
+    "image": "SevillaBetis.jpg",
+    "options": [
+      {
+        "text": "¡A dormir, que lo merecemos!",
+        "effects": {"people": 15, "money": 5, "army": 5 }
+      },
+      {
+        "text": "¡A currar se ha dicho!",
+        "effects": { "people": -15 }
+      }
+    ]
+  },
+  {
+    "id": "bocatas_jamon",
+    "title": "Bocatas de jamón gratis en Santa Justa",
+    "description": "Promoción para turistas: bocadillo por cada billete de AVE.",
+    "image": "SSJamon.png",
+    "options": [
+      {
+        "text": "¡Marca España!",
+        "effects": {"people": -5, "money": -5, "army": 15 }
+      },
+      {
+        "text": "Eso es un despilfarro.",
+        "effects": { "army": -15 }
+      }
+    ]
+  },{
+    "id": "evento_carnaval_cadiz",
+    "title": "Carnavales de Cádiz",
+    "description": "¡La chirigota que dejaste actuar te ha invitado al Carnaval de Cádiz!",
+    "requisitos": ["ayuda_chirigota"],
+    "image": "carnaval.png",
+    "options": [
+      {
+        "text": "¡A currar se ha dicho!",
+        "effects": { "people": 10, "money": 10, "army": 20 }
+      },
+      {
+        "text": "Paso, mucho jaleo",
+        "effects": {"people": -10,"army": -5}
+      }
+    ]
+  },{
+    "id": "protestas_metro",
+    "title": "Línea 2 del Metro",
+    "description": "Las protestas aumentan por la falta de avances en la construcción de la Línea 2 del Metro.",
+    "requisitos": ["linea3_metro"],
+    "image": "protestasMetro.png",
+    "options": [
+      {
+        "text": "Prometes destinar dinero a la construcción de la Línea 2.",
+        "effects": { "people": 10, "money": -20}
+      },
+      {
+        "text": "No hacer caso a las protestas.",
+        "effects": {"people": -20}
+      }
+    ]
+  },{
+    "id": "protestas_laAntilla",
+    "title": "Vacaciones en La Antilla",
+    "requisitos": ["autobuses_matalascañas"],
+    "description": "Los veraneantes de La Antilla protestan porque ellos también quieren autobuses.",
+    "image": "protestaLaAntilla.png",
+    "options": [
+      {
+        "text": "¡Todos a la playa!",
+        "effects": { "people": 10}
+      },
+      {
+        "text": "No, mejor que cada uno se busque la vida.",
+        "effects": {"people": -10}
+      }
+    ]
+  },{
+    "id": "sevilla_ganador",
+    "title": "El Sevilla se corona campeón",
+    "requisitos": ["sevilla_finalista"],
+    "description": "El Sevilla FC ha ganado la UEFA y se propone celebrarlo con una gran fiesta en la Plaza Nueva.",
+    "image": "SevillaGanador.png",
+    "options": [
+      {
+        "text": "Sevilla Campeón, ¡a celebrarlo!",
+        "effects": { "people": 5}
+      },
+      {
+        "text": "No, mejor que cada uno celebre en su casa.",
+        "effects": {"people": -5}
+      }
+    ]
+  },{
+    "id": "corridas_sin_muerte",
+    "title": "Toros pacíficos",
+    "description": "Se propone que las corridas de toros sean sin muerte",
+    "image": "toros_pacificos.png",
+    "options": [
+      {
+        "text": "Sí, que todos salgan vivos.",
+        "effects": { "people": -10, "army": -5 }
+      },
+      {
+        "text": "Eso no es toreo.",
+        "effects": { "people": 10, "army": 5 }
+      }
+    ]
+  },
+  {
+    "id": "bicis_donana",
+    "title": "Bicis eléctricas en Donana",
+    "description": "Se propone alquilar bicis eléctricas para recorrer el parque sin contaminar.",
+    "image": "bicis_donana.png",
+    "options": [
+      {
+        "text": "Si, cuidemos el entorno.",
+        "effects": { "people": 10, "money": 10, "army": 5}
+      },
+      {
+        "text": "Eso traera demasiado turismo.",
+        "effects": { "people": -5,  "army": -5}
+      }
+    ]
+  },
+  {
+    "id": "sevilla_olimpiadas",
+    "title": "Sevilla candidata a las Olimpiadas",
+    "description": "Sevilla se postula para ser sede de los Juegos Olímpicos.",
+    "image": "XXX.png",
+    "options": [
+      {
+        "text": "¡Vamos a por todas!",
+        "effects": { "people": 15, "money": -20, "army": 10 }
+      },
+      {
+        "text": "Demasiado gasto para una ciudad pequeña.",
+        "effects": { "people": -10, "army": -15 }
+      }
+    ]
+  },
+  {
+    "id": "tapas_veganas",
+    "title": "Feria de Tapas Veganas",
+    "description": "Se celebrara una feria de tapas veganas en la Plaza de Espana.",
+    "image": "tapasVeganas.png",
+    "options": [
+      {
+        "text": "Si, viva la alegria.",
+        "effects": { "people": 15, "money": 15 }
+      },
+      {
+        "text": "No, es una falta de respeto.",
+        "effects": { "people": -5 }
+      }
+    ]
+  }
+]

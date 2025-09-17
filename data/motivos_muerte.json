@@ -1,0 +1,86 @@
+{
+  "religion": {
+    "zero": [
+      {
+        "motivo": "La modernidad arrasó con las tradiciones. Nadie recuerda ni el pescaito.",
+        "imagen": "muerteReligion1.png"
+      },
+      {
+        "motivo": "Perdiste el alma del barrio. Ya nadie canta por sevillanas.",
+        "imagen": "muerteReligion1.png"
+      }
+    ],
+    "hundred": [
+      {
+        "motivo": "La ciudad se volvió un museo viviente. Ni WiFi queda.",
+        "imagen": "airbnb.png"
+      },
+      {
+        "motivo": "Tanta tradición asfixió cualquier innovación. El tiempo se detuvo.",
+        "imagen": "airbnb.png"
+      }
+    ]
+  },
+  "people": {
+    "zero": [
+      {
+        "motivo": "Los vecinos te dieron la espalda. Las calles estan vacias.",
+        "imagen": "calle_vacia.png"
+      },
+      {
+        "motivo": "Los balcones cerraron sus cortinas. Reina el silencio.",
+        "imagen": "calle_vacia.png"
+      }
+    ],
+    "hundred": [
+      {
+        "motivo": "Demasiada vida vecinal causo disturbios. ¡Fiesta descontrolada!",
+        "imagen": "botellonCatedral.png"
+      },
+      {
+        "motivo": "Organizaste tantas fiestas vecinales que hay botellon hasta en la Catedral.",
+        "imagen": "botellonCatedral.png"
+      }
+    ]
+  },
+  "money": {
+    "zero": [
+      {
+        "motivo": "No habia ni pa rebujito. La Feria fue cancelada por pobre",
+        "imagen": "airbnb.png"
+      },
+      {
+        "motivo": "Vendiste las sillas de la carrera oficial pa pagar el wifi del ayuntamiento.",
+        "imagen": "pagarWifi.png"
+      }
+    ],
+    "hundred": [
+      {
+        "motivo": "Hiciste tanto dinero que pusiste parquimetro hasta en Triana.",
+        "imagen": "airbnb.png"
+      },
+      {
+        "motivo": "Te volviste tan rico que privatizaste el Real. ¡Y te lincharon!",
+        "imagen": "airbnb.png"
+      }
+    ]
+  },
+  "army": {
+    "zero": [
+      {
+        "motivo": "No vino ni un guiri. El camarero del bar lloro de soledad",
+        "imagen": "camarero_triste.png"
+      }
+    ],
+    "hundred": [
+      {
+        "motivo": "Demasiado turismo. La ciudad se volvio un parque tematico.",
+        "imagen": "parqueAtracciones.png"
+      },
+      {
+        "motivo": "Montaste tanto AirBnB que los sevillanos viven en carpas en el Alamillo.",
+        "imagen": "airbnb.png"
+      }
+    ]
+  }
+}
