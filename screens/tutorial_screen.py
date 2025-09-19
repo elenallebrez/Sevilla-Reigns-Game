@@ -32,13 +32,6 @@ def tutorial_screen(screen, WIDTH, HEIGHT, FONT, background_image):
     while running:
         screen.blit(background_image, (0, 0))
 
-        # Caja translúcida para el tutorial
-        #box_width = WIDTH - 100
-        #box_height = HEIGHT - 200
-        #box_surface = pygame.Surface((box_width, box_height), pygame.SRCALPHA)
-        #pygame.draw.rect(box_surface, (255, 255, 255, 220), box_surface.get_rect(), border_radius=20)
-        #screen.blit(box_surface, (50, 70))
-
         # Renderizado del texto
         y_offset = 100
         for line in tutorial_text:

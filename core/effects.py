@@ -2,8 +2,13 @@ from core.game_state import stats
 import json
 import os
 import random
+from pathlib import Path
 
-with open((r'C:\Users\elena\Documents\Portfolio\Sevilla\data\motivos_muerte.json'), encoding='utf-8') as f:
+base = Path(__file__).resolve().parent
+ruta = base.parent / "data" / "motivos_muerte.json"
+
+
+with open(ruta, encoding="utf-8") as f:
     MOTIVOS_MUERTE = json.load(f)
 
 def aplicar_efectos(efectos):

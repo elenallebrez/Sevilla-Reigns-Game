@@ -13,11 +13,11 @@
     "hundred": [
       {
         "motivo": "La ciudad se volvió un museo viviente. Ni WiFi queda.",
-        "imagen": "airbnb.png"
+        "imagen": "catedral_vacia.png"
       },
       {
         "motivo": "Tanta tradición asfixió cualquier innovación. El tiempo se detuvo.",
-        "imagen": "airbnb.png"
+        "imagen": "catedral_vacia.png"
       }
     ]
   },
@@ -47,7 +47,7 @@
     "zero": [
       {
         "motivo": "No habia ni pa rebujito. La Feria fue cancelada por pobre",
-        "imagen": "airbnb.png"
+        "imagen": "feria_pobre.png"
       },
       {
         "motivo": "Vendiste las sillas de la carrera oficial pa pagar el wifi del ayuntamiento.",
@@ -57,11 +57,11 @@
     "hundred": [
       {
         "motivo": "Hiciste tanto dinero que pusiste parquimetro hasta en Triana.",
-        "imagen": "airbnb.png"
+        "imagen": "parquimetro.png"
       },
       {
         "motivo": "Te volviste tan rico que privatizaste el Real. ¡Y te lincharon!",
-        "imagen": "airbnb.png"
+        "imagen": "privatizarReal.png"
       }
     ]
   },

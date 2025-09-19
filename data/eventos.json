@@ -234,7 +234,7 @@
     "id": "ampliacion_publicas",
     "title": "Ampliacion de la feria",
     "description": "Se propone ampliar la Feria de Abril",
-    "image": "SevillaBetis.jpg",
+    "image": "ampliacionFeria.png",
     "options": [
       {
         "text": "¡Ole, ole y ole!",
@@ -280,7 +280,7 @@
     "id": "festival_flamenco",
     "title": "Festival Flamenco Fusión",
     "description": "Montas un festival con artistas locales y estrellas internacionales.",
-    "image": "SevillaBetis.jpg",
+    "image": "festivalFlamenco.png",
     "options": [
       {
         "text": "¡El arte no tiene fronteras!",
@@ -328,7 +328,7 @@
     "id": "lunes_post_feria",
     "title": "Lunes post-feria como festivo",
     "description": "Legalizas el descanso tras la semana grande.",
-    "image": "SevillaBetis.jpg",
+    "image": "lunes_post.png",
     "options": [
       {
         "text": "¡A dormir, que lo merecemos!",

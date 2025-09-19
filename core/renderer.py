@@ -2,8 +2,8 @@ import pygame
 import os
 import sys
 from core.game_state import stats
-from core.sounds import click_sound, reproducir_muerte, fail_sound, reproducir_musica
-from config import icons_empty, icons_mask, BIG_FONT, FONT, BAR_COLOR, WHITE, BLACK, WIDTH, HEIGHT, MEDIUM_FONT, clock, FPS
+from core.sounds import click_sound, reproducir_muerte, reproducir_musica
+from config import icons_empty, icons_mask, BIG_FONT, FONT, WHITE, BLACK, WIDTH, HEIGHT, MEDIUM_FONT, clock, FPS
 
 def draw_stats(screen):
     width = screen.get_width()
