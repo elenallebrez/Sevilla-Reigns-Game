@@ -50,6 +50,7 @@ class EventManager:
     def aplicar_decision(self, evento, lado):
         opcion = evento.options[lado]
         self.eventos_activados.add(evento.id)
+        self.eventos_desbloqueados.add(evento.id)
 
         if opcion.desbloquea:
             desbloqueos = opcion.desbloquea
