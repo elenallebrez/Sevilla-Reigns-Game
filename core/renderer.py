@@ -3,7 +3,27 @@ import os
 import sys
 from core.game_state import stats
 from core.sounds import click_sound, reproducir_muerte, reproducir_musica
-from config import icons_empty, icons_mask, BIG_FONT, FONT, WHITE, BLACK, WIDTH, HEIGHT, MEDIUM_FONT, clock, FPS
+from config import IMG_PATH, icons_empty, icons_mask, BIG_FONT, FONT, WHITE, BLACK, WIDTH, HEIGHT, MEDIUM_FONT, clock, FPS
+
+_event_image_cache = {}
+_scaled_event_image_cache = {}
+
+
+def get_scaled_event_image(image_name, max_width, max_height):
+    cache_key = (image_name, max_width, max_height)
+    if cache_key in _scaled_event_image_cache:
+        return _scaled_event_image_cache[cache_key]
+
+    if image_name not in _event_image_cache:
+        _event_image_cache[image_name] = pygame.image.load(str(IMG_PATH / image_name)).convert_alpha()
+
+    image = _event_image_cache[image_name]
+    orig_w, orig_h = image.get_size()
+    scale = min(max_width / orig_w, max_height / orig_h)
+    new_size = (int(orig_w * scale), int(orig_h * scale))
+    scaled_image = pygame.transform.smoothscale(image, new_size)
+    _scaled_event_image_cache[cache_key] = scaled_image
+    return scaled_image
 
 def draw_stats(screen):
     width = screen.get_width()
@@ -82,27 +102,17 @@ def draw_event(screen, evento, swipe_offset):
 
     if evento.image:
         try:
-            ruta_imagen = os.path.join("resources", "images", evento.image)
-            imagen_evento = pygame.image.load(ruta_imagen).convert_alpha()
-
-            # Tamaño original
-            orig_w, orig_h = imagen_evento.get_size()
-            image_y = title_y + title.get_height() + 20
-
             # Definir tamaño máximo permitido dentro de la carta
             espacio_libre = card_rect.bottom - 140 - image_y
             max_w = int(card_width * 0.8)
             max_h = espacio_libre  # por ejemplo, 40% del alto de la carta
 
-            # Escalar manteniendo proporción
-            scale = min(max_w / orig_w, max_h / orig_h)
-            new_w = int(orig_w * scale)
-            new_h = int(orig_h * scale)
-
-            imagen_evento = pygame.transform.smoothscale(imagen_evento, (new_w, new_h))
+            imagen_evento = get_scaled_event_image(evento.image, max_w, max_h)
+            new_w, new_h = imagen_evento.get_size()
 
             # Centrar en la carta
             image_x = card_rect.centerx - new_w // 2
+            image_height = new_h
 
             screen.blit(imagen_evento, (image_x, image_y))
 
