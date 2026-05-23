@@ -1,9 +1,6 @@
 import pygame
-import json
 import os
-import random
-from core.event import Evento
-from config import WIDTH, HEIGHT, FPS, screen, clock, FONT, WHITE, SUPER_FONT
+from config import WIDTH, HEIGHT, FPS, screen, clock, FONT, SUPER_FONT
 from core.effects import aplicar_efectos, check_fin, get_info_muerte
 from core.renderer import draw_stats, draw_event, mostrar_pantalla_final, mostrar_confirmacion_salida, mostrar_pantalla_reeleccion
 from screens.start_screen import start_screen
@@ -18,7 +15,6 @@ from screens.credits_screen import credits_screen
 
 # Cargar eventos desde JSON
 event_manager = EventManager("data/eventos.json")
-evento_actual = event_manager.seleccionar_evento()
 
 background_path = os.path.join("resources", "images", "fondo.png")
 background = pygame.image.load(background_path)
@@ -34,7 +30,7 @@ def bucle_del_juego(screen):
 
     if evento_actual is None:
         texto_final = "No quedan más eventos disponibles. ¡Gracias por jugar!"
-        next_screen = mostrar_pantalla_final(screen, texto_final)
+        next_screen = mostrar_pantalla_final(screen, texto_final, None)
         return next_screen
 
     swipe_offset = 0
@@ -59,18 +55,18 @@ def bucle_del_juego(screen):
                     page_sound.play()
                     lado_elegido = 0
                     swipe_direction = -1
+                    cambios = event_manager.aplicar_decision(evento_actual, lado_elegido)
+                    aplicar_efectos(cambios)
                 elif event.key == pygame.K_RIGHT:
                     page_sound.play()
                     lado_elegido = 1
                     swipe_direction = 1
+                    cambios = event_manager.aplicar_decision(evento_actual, lado_elegido)
+                    aplicar_efectos(cambios)
                 elif event.key == pygame.K_ESCAPE:
                     salir = mostrar_confirmacion_salida(screen)
                     if salir:
                         return "menu"
-
-            if swipe_direction != 0:
-                    cambios = event_manager.aplicar_decision(evento_actual, lado_elegido)
-                    aplicar_efectos(cambios)
 
         if swipe_direction != 0:
             swipe_offset += swipe_speed * swipe_direction
@@ -91,6 +87,10 @@ def bucle_del_juego(screen):
                         cartas_jugadas = 0 
 
                     evento_actual = event_manager.seleccionar_evento()
+                    if evento_actual is None:
+                        texto_final = "No quedan más eventos disponibles. ¡Gracias por jugar!"
+                        next_screen = mostrar_pantalla_final(screen, texto_final, None)
+                        return next_screen
                     swipe_offset = 0
                     swipe_direction = 0
 
