@@ -1,39 +1,38 @@
-from core.game_state import stats
 import json
-import os
 import random
 from pathlib import Path
 
-base = Path(__file__).resolve().parent
-ruta = base.parent / "data" / "motivos_muerte.json"
+from core.game_state import GameState
 
 
-with open(ruta, encoding="utf-8") as f:
-    MOTIVOS_MUERTE = json.load(f)
+DEATH_REASONS_PATH = Path(__file__).resolve().parents[1] / "data" / "motivos_muerte.json"
 
-def aplicar_efectos(efectos):
-    for stat, cambio in efectos.items():
-        if stat in stats:
-            stats[stat] += cambio
-            stats[stat] = max(0, min(100, stats[stat]))
-        else:
-            print(f"Stat desconocida: {stat}")
+with open(DEATH_REASONS_PATH, encoding="utf-8") as file:
+    DEATH_REASONS = json.load(file)
 
-def check_fin():
-    for stat, val in stats.items():
-        if val <= 0 or val >= 100:
-            return stat
-    return None
 
-def get_info_muerte(stat, value):
-    if stat not in MOTIVOS_MUERTE:
+def apply_effects(game_state: GameState, effects: dict[str, int]) -> list[str]:
+    unknown_stats = game_state.apply_effects(effects)
+    for stat in unknown_stats:
+        print(f"Stat desconocida: {stat}")
+
+    return unknown_stats
+
+
+def get_end_stat(game_state: GameState) -> str | None:
+    return game_state.get_end_stat()
+
+
+def get_death_info(stat: str, value: int) -> tuple[str, str | None]:
+    if stat not in DEATH_REASONS:
         return "Has abdicado... pero no sabemos por que", None
 
-    clave = "zero" if value <= 0 else "hundred"
-    opciones = MOTIVOS_MUERTE[stat].get(clave, [])
+    limit_key = "zero" if value <= 0 else "hundred"
+    options = DEATH_REASONS[stat].get(limit_key, [])
 
-    if not opciones:
+    if not options:
         return "Has muerto de forma misteriosa...", None
 
-    eleccion = random.choice(opciones)
-    return eleccion["motivo"], os.path.join("resources", "images", eleccion["imagen"])
+    selected = random.choice(options)
+    image_path = Path("resources") / "images" / selected["imagen"]
+    return selected["motivo"], str(image_path)

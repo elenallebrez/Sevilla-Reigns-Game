@@ -1,6 +1,6 @@
 import json
 
-from core.eventmanager import EventManager
+from core.event_manager import EventManager
 
 
 def write_events(tmp_path, events):
@@ -37,9 +37,9 @@ def test_selection_restarts_without_recursion_when_events_are_exhausted(tmp_path
 
     selected_ids = []
     for _ in range(5):
-        event = manager.seleccionar_evento()
+        event = manager.select_event()
         selected_ids.append(event.id)
-        manager.aplicar_decision(event, 0)
+        manager.apply_decision(event, 0)
 
     assert selected_ids == ["only_event"] * 5
 
@@ -55,11 +55,11 @@ def test_requirements_block_events_until_unlocked(tmp_path):
         )
     )
 
-    first_event = manager.seleccionar_evento()
+    first_event = manager.select_event()
     assert first_event.id == "base"
 
-    manager.aplicar_decision(first_event, 0)
-    second_event = manager.seleccionar_evento()
+    manager.apply_decision(first_event, 0)
+    second_event = manager.select_event()
 
     assert second_event.id == "follow_up"
 
@@ -76,16 +76,16 @@ def test_list_unlocks_are_supported(tmp_path):
         )
     )
 
-    event = manager.seleccionar_evento()
-    manager.aplicar_decision(event, 0)
+    event = manager.select_event()
+    manager.apply_decision(event, 0)
 
-    assert {"a", "b"}.issubset(manager.eventos_desbloqueados)
+    assert {"a", "b"}.issubset(manager.unlocked_event_ids)
 
 
 def test_apply_decision_returns_selected_option_effects(tmp_path):
     manager = EventManager(write_events(tmp_path, [make_event("base")]))
-    event = manager.seleccionar_evento()
+    event = manager.select_event()
 
-    effects = manager.aplicar_decision(event, 1)
+    effects = manager.apply_decision(event, 1)
 
     assert effects == {"people": -1}

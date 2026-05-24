@@ -1,43 +1,50 @@
-import pytest
-
-from core.effects import aplicar_efectos, check_fin
-from core.game_state import get_default_stats, stats
+from core.effects import apply_effects, get_end_stat
+from core.game_state import GameState, get_default_stats
 
 
-@pytest.fixture(autouse=True)
-def reset_stats():
-    stats.clear()
-    stats.update(get_default_stats())
+def test_apply_effects_updates_known_stats():
+    game_state = GameState()
+
+    apply_effects(game_state, {"people": 10, "money": -15})
+
+    assert game_state.stats["people"] == 60
+    assert game_state.stats["money"] == 35
 
 
-def test_aplicar_efectos_updates_known_stats():
-    aplicar_efectos({"people": 10, "money": -15})
+def test_apply_effects_clamps_stats_between_zero_and_hundred():
+    game_state = GameState()
 
-    assert stats["people"] == 60
-    assert stats["money"] == 35
+    apply_effects(game_state, {"people": 200, "money": -200})
 
-
-def test_aplicar_efectos_clamps_stats_between_zero_and_hundred():
-    aplicar_efectos({"people": 200, "money": -200})
-
-    assert stats["people"] == 100
-    assert stats["money"] == 0
+    assert game_state.stats["people"] == 100
+    assert game_state.stats["money"] == 0
 
 
-def test_aplicar_efectos_ignores_unknown_stats(capsys):
-    aplicar_efectos({"unknown": 50})
+def test_apply_effects_ignores_unknown_stats(capsys):
+    game_state = GameState()
 
+    unknown_stats = apply_effects(game_state, {"unknown": 50})
     captured = capsys.readouterr()
 
-    assert stats == get_default_stats()
+    assert unknown_stats == ["unknown"]
+    assert game_state.stats == get_default_stats()
     assert "Stat desconocida: unknown" in captured.out
 
 
-def test_check_fin_returns_first_stat_at_limit():
-    stats["religion"] = 0
+def test_get_end_stat_returns_first_stat_at_limit():
+    game_state = GameState()
+    game_state.stats["religion"] = 0
 
-    assert check_fin() == "religion"
+    assert get_end_stat(game_state) == "religion"
 
 
-def test_check_fin_returns_none_when_no_stat_is_at_limit():
-    assert check_fin() is None
+def test_get_end_stat_uses_documented_priority_when_multiple_stats_fail():
+    game_state = GameState()
+    game_state.stats["money"] = 0
+    game_state.stats["people"] = 100
+
+    assert get_end_stat(game_state) == "people"
+
+
+def test_get_end_stat_returns_none_when_no_stat_is_at_limit():
+    assert get_end_stat(GameState()) is None
