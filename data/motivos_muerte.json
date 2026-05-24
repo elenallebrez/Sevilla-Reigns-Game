@@ -3,11 +3,11 @@
     "zero": [
       {
         "motivo": "La modernidad arrasó con las tradiciones. Nadie recuerda ni el pescaito.",
-        "imagen": "muerteReligion1.png"
+        "imagen": "muerte_religion_1.png"
       },
       {
         "motivo": "Perdiste el alma del barrio. Ya nadie canta por sevillanas.",
-        "imagen": "muerteReligion1.png"
+        "imagen": "muerte_religion_1.png"
       }
     ],
     "hundred": [
@@ -35,11 +35,11 @@
     "hundred": [
       {
         "motivo": "Demasiada vida vecinal causo disturbios. ¡Fiesta descontrolada!",
-        "imagen": "botellonCatedral.png"
+        "imagen": "botellon_catedral.png"
       },
       {
         "motivo": "Organizaste tantas fiestas vecinales que hay botellon hasta en la Catedral.",
-        "imagen": "botellonCatedral.png"
+        "imagen": "botellon_catedral.png"
       }
     ]
   },
@@ -51,7 +51,7 @@
       },
       {
         "motivo": "Vendiste las sillas de la carrera oficial pa pagar el wifi del ayuntamiento.",
-        "imagen": "pagarWifi.png"
+        "imagen": "pagar_wifi.png"
       }
     ],
     "hundred": [
@@ -61,7 +61,7 @@
       },
       {
         "motivo": "Te volviste tan rico que privatizaste el Real. ¡Y te lincharon!",
-        "imagen": "privatizarReal.png"
+        "imagen": "privatizar_real.png"
       }
     ]
   },
@@ -75,7 +75,7 @@
     "hundred": [
       {
         "motivo": "Demasiado turismo. La ciudad se volvio un parque tematico.",
-        "imagen": "parqueAtracciones.png"
+        "imagen": "parque_atracciones.png"
       },
       {
         "motivo": "Montaste tanto AirBnB que los sevillanos viven en carpas en el Alamillo.",

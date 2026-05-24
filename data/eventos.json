@@ -3,7 +3,7 @@
     "id": "real_balompedico_sevillano",
     "title": "Real Balompédico Sevillano",
     "description": "Sevilla FC y Betis proponen un equipo conjunto: Real Balompédico Sevillano.",
-    "image": "SevillaBetis.jpg",
+    "image": "sevilla_betis.jpg",
     "options": [
       {
         "text": "¡Viva el fútbol!",
@@ -21,7 +21,7 @@
     "image": "mas_rebujito.png",
     "options": [
       {
-        "text": "Que gran idea, ¡rebujito para todos!",
+        "text": "Qué gran idea, ¡rebujito para todos!",
         "effects": { "people": -5, "money": -5, "army": 5 },
         "desbloquea": ["cruzcampo_bancarrota"]
       },
@@ -34,7 +34,7 @@
     "id": "cruzcampo_bancarrota",
     "title": "Cerveza a precio de oro",
     "requisitos": ["mas_rebujito"],
-    "description": "Por la prohibicion del consumo de cerveza en la feria, Cruzcampo esta a punto de quebrar.",
+    "description": "Por la prohibición del consumo de cerveza en la feria, Cruzcampo está a punto de quebrar.",
     "image": "cruzcampo_bancarrota.png",
     "options": [
       {
@@ -42,7 +42,7 @@
         "effects": { "people": 10, "money": -10}
       },
       {
-        "text": "Saldran de esta",
+        "text": "Saldrán de esta",
         "effects": {"people": -100}
       }
     ]
@@ -53,7 +53,7 @@
     "image": "sevilla_finalista.png",
     "options": [
       {
-        "text": "¡Viva el futbol!",
+        "text": "¡Viva el fútbol!",
         "effects": { "people": 10, "money": -10},
         "desbloquea": ["sevilla_ganador"]
       },
@@ -69,11 +69,11 @@
     "image": "carrera_oficial.png",
     "options": [
       {
-        "text": "Perfecto, mas devocion.",
+        "text": "Perfecto, más devoción.",
         "effects": { "religion":-100}
       },
       {
-        "text": "Eso no es tradicion.",
+        "text": "Eso no es tradición.",
         "effects": {"religion": 5}
       }
     ]
@@ -84,7 +84,7 @@
     "image": "mercadillo.png",
     "options": [
       {
-        "text": "Di que si, mas mercadillos.",
+        "text": "Di que sí, más mercadillos.",
         "effects": { "people": 15, "money": 10, "army": 5 }
       },
       {
@@ -96,7 +96,7 @@
     "id": "mover_feria",
     "title": "Cambio de recinto",
     "description": "Proponen trasladar la Feria al Parque de María Luisa para más sombra.",
-    "image": "feria_PML.png",
+    "image": "feria_pml.png",
     "options": [
       {
         "text": "Aceptar el cambio.",
@@ -114,7 +114,7 @@
     "image": "moda_flamenca.png",
     "options": [
       {
-        "text": "Si, viva la moda flamenca",
+        "text": "Sí, viva la moda flamenca",
         "effects": { "people": 5,"army": 10 }
       },
       {
@@ -126,10 +126,10 @@
     "id": "semana_santa_pantallas",
     "title": "Pantallas en Semana Santa",
     "description": "Se propone instalar pantallas gigantes en la Plaza de España para ver las procesiones.",
-    "image": "pantallasSS.png",
+    "image": "pantallas_ss.png",
     "options": [
       {
-        "text": "Si, asi todos pueden disfrutar.",
+        "text": "Sí, así todos pueden disfrutar.",
         "effects": { "religion":10,"people": 5, "money": -10, "army": -10 }
       },
       {
@@ -144,7 +144,7 @@
     "image": "privatizar.png",
     "options": [
       {
-        "text": "Si, que paguen por disfrutarla.",
+        "text": "Sí, que paguen por disfrutarla.",
         "effects": { "people": -5, "money": 15, "army": -10 }
       },
       {
@@ -190,7 +190,7 @@
     "image": "chirigota.png",
     "options": [
       {
-        "text": "Si, viva la alegria.",
+        "text": "Sí, viva la alegría.",
         "effects": { "people": 10, "money": 10, "army": 10 },
         "desbloquea": ["evento_carnaval_cadiz"]
       },
@@ -211,7 +211,7 @@
         "desbloquea": ["protestas_metro"]
       },
       {
-        "text": "Centremonos en las que se estan construyendo.",
+        "text": "Centrémonos en las que se están construyendo.",
         "effects": {"people": -10}
       }
     ]
@@ -234,14 +234,14 @@
     "id": "ampliacion_publicas",
     "title": "Ampliacion de la feria",
     "description": "Se propone ampliar la Feria de Abril",
-    "image": "ampliacionFeria.png",
+    "image": "ampliacion_feria.png",
     "options": [
       {
         "text": "¡Ole, ole y ole!",
         "effects": { "people": 20, "money": 10, "army": 15 }
       },
       {
-        "text": "La feria se queda como esta.",
+        "text": "La feria se queda como está.",
         "effects": {"people": -10,"army": -5}
       }
     ]
@@ -249,14 +249,14 @@
     "id": "casetas_publicas",
     "title": "Casetas publicas",
     "description": "Se propone que todas las casetas de la Feria sean publicas y gratuitas.",
-    "image": "feriaPublica.png",
+    "image": "feria_publica.png",
     "options": [
       {
         "text": "¡Ole, ole y ole!",
         "effects": { "people": -100, "money": -100, "army": 100 }
       },
       {
-        "text": "La feria se queda como esta.",
+        "text": "La feria se queda como está.",
         "effects": {"army": -20}
       }
     ]
@@ -267,7 +267,7 @@
     "image": "cambio_de_recorrido.png",
     "options": [
       {
-        "text": "Perfecto, mas devocion.",
+        "text": "Perfecto, más devoción.",
         "effects": { "religion": 15, "people": 10, "money": -5, "army": 10 }
       },
       {
@@ -280,7 +280,7 @@
     "id": "festival_flamenco",
     "title": "Festival Flamenco Fusión",
     "description": "Montas un festival con artistas locales y estrellas internacionales.",
-    "image": "festivalFlamenco.png",
+    "image": "festival_flamenco.png",
     "options": [
       {
         "text": "¡El arte no tiene fronteras!",
@@ -296,7 +296,7 @@
     "id": "museo_betis",
     "title": "Campeonato Mundial de Rebujito",
     "description": "Traes competidores de todo el mundo para hacer el rebujito perfecto.",
-    "image": "campeonatoRebujito.png",
+    "image": "campeonato_rebujito.png",
     "options": [
       {
         "text": "¡Brindemos!",
@@ -344,7 +344,7 @@
     "id": "bocatas_jamon",
     "title": "Bocatas de jamón gratis en Santa Justa",
     "description": "Promoción para turistas: bocadillo por cada billete de AVE.",
-    "image": "SSJamon.png",
+    "image": "ss_jamon.png",
     "options": [
       {
         "text": "¡Marca España!",
@@ -376,7 +376,7 @@
     "title": "Línea 2 del Metro",
     "description": "Las protestas aumentan por la falta de avances en la construcción de la Línea 2 del Metro.",
     "requisitos": ["linea3_metro"],
-    "image": "protestasMetro.png",
+    "image": "protestas_metro.png",
     "options": [
       {
         "text": "Prometes destinar dinero a la construcción de la Línea 2.",
@@ -392,7 +392,7 @@
     "title": "Vacaciones en La Antilla",
     "requisitos": ["autobuses_matalascañas"],
     "description": "Los veraneantes de La Antilla protestan porque ellos también quieren autobuses.",
-    "image": "protestaLaAntilla.png",
+    "image": "protesta_la_antilla.png",
     "options": [
       {
         "text": "¡Todos a la playa!",
@@ -408,7 +408,7 @@
     "title": "El Sevilla se corona campeón",
     "requisitos": ["sevilla_finalista"],
     "description": "El Sevilla FC ha ganado la UEFA y se propone celebrarlo con una gran fiesta en la Plaza Nueva.",
-    "image": "SevillaGanador.png",
+    "image": "sevilla_ganador.png",
     "options": [
       {
         "text": "Sevilla Campeón, ¡a celebrarlo!",
@@ -442,11 +442,11 @@
     "image": "bicis_donana.png",
     "options": [
       {
-        "text": "Si, cuidemos el entorno.",
+        "text": "Sí, cuidemos el entorno.",
         "effects": { "people": 10, "money": 10, "army": 5}
       },
       {
-        "text": "Eso traera demasiado turismo.",
+        "text": "Eso traerá demasiado turismo.",
         "effects": { "people": -5,  "army": -5}
       }
     ]
@@ -471,10 +471,10 @@
     "id": "tapas_veganas",
     "title": "Feria de Tapas Veganas",
     "description": "Se celebrara una feria de tapas veganas en la Plaza de Espana.",
-    "image": "tapasVeganas.png",
+    "image": "tapas_veganas.png",
     "options": [
       {
-        "text": "Si, viva la alegria.",
+        "text": "Sí, viva la alegría.",
         "effects": { "people": 15, "money": 15 }
       },
       {
