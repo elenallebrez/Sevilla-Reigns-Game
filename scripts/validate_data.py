@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EVENTS_PATH = ROOT / "data" / "eventos.json"
 DEATH_REASONS_PATH = ROOT / "data" / "motivos_muerte.json"
 IMAGES_PATH = ROOT / "resources" / "images"
-VALID_STATS = {"religion", "people", "money", "army"}
+VALID_STATS = {"religion", "people", "money", "tourism"}
 
 
 def load_json(path):

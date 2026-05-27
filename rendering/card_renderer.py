@@ -12,7 +12,7 @@ CATEGORY_TABS = (
     ("religion", "cross_cobalt.png"),
     ("people", "flamenca_cobalt.png"),
     ("money", "euro_cobalt.png"),
-    ("army", "suitcases_cobalt.png"),
+    ("tourism", "suitcases_cobalt.png"),
 )
 
 TEXT_LINE_SPACING = 5

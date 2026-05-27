@@ -12,15 +12,15 @@ DEFAULT_STATS: Stats = {
     "religion": DEFAULT_STAT_VALUE,
     "people": DEFAULT_STAT_VALUE,
     "money": DEFAULT_STAT_VALUE,
-    "army": DEFAULT_STAT_VALUE,
+    "tourism": DEFAULT_STAT_VALUE,
 }
 
-END_STAT_PRIORITY = ("religion", "people", "money", "army")
+END_STAT_PRIORITY = ("religion", "people", "money", "tourism")
 STAT_LABELS = {
     "religion": "Tradición",
     "people": "Vecindario",
     "money": "Dinero",
-    "army": "Turismo",
+    "tourism": "Turismo",
 }
 
 

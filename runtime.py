@@ -37,14 +37,14 @@ def initialize_pygame(fullscreen=True):
         "religion": pygame.image.load(str(config.IMG_PATH / "religion3.png")),
         "people": pygame.image.load(str(config.IMG_PATH / "people3.png")),
         "money": pygame.image.load(str(config.IMG_PATH / "money3.png")),
-        "army": pygame.image.load(str(config.IMG_PATH / "army3.png")),
+        "tourism": pygame.image.load(str(config.IMG_PATH / "tourism3.png")),
     }
 
     config.icons_mask = {
         "religion": pygame.image.load(str(config.IMG_PATH / "religion_sil.png")),
         "people": pygame.image.load(str(config.IMG_PATH / "people_sil.png")),
         "money": pygame.image.load(str(config.IMG_PATH / "money_sil.png")),
-        "army": pygame.image.load(str(config.IMG_PATH / "army_sil.png")),
+        "tourism": pygame.image.load(str(config.IMG_PATH / "tourism_sil.png")),
     }
 
     config.clock = pygame.time.Clock()

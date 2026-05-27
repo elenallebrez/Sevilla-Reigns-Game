@@ -11,6 +11,13 @@ def test_apply_effects_updates_known_stats():
     assert game_state.stats["money"] == 35
 
 
+def test_default_stats_use_tourism_key():
+    stats = get_default_stats()
+
+    assert "tourism" in stats
+    assert "army" not in stats
+
+
 def test_apply_effects_clamps_stats_between_zero_and_hundred():
     game_state = GameState()
 
