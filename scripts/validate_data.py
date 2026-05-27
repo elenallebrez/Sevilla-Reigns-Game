@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS_PATH = ROOT / "data" / "eventos.json"
 DEATH_REASONS_PATH = ROOT / "data" / "motivos_muerte.json"
-IMAGES_PATH = ROOT / "resources" / "images"
+IMAGES_PATH = ROOT / "assets" / "images"
 VALID_STATS = {"religion", "people", "money", "tourism"}
 
 

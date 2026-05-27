@@ -1,5 +1,5 @@
-from core.game_session import CARDS_PER_REELECTION, GameSession
-from core.game_state import GameState
+from sevilla_reigns.application.game_session import CARDS_PER_REELECTION, GameSession
+from sevilla_reigns.domain.entities.game_state import GameState
 
 
 class FakeEventManager:

@@ -41,8 +41,8 @@ El juego se abre en pantalla completa. Pulsa `Esc` durante la partida para abrir
 
 ## Controles
 
-- `←`: elegir opción izquierda.
-- `→`: elegir opción derecha.
+- `Izquierda`: elegir opción izquierda.
+- `Derecha`: elegir opción derecha.
 - `Esc`: volver al menú desde la partida.
 - Ratón: usar botones de menú, ajustes, tutorial, créditos y decisiones.
 
@@ -57,28 +57,32 @@ Los tests cubren integridad de datos JSON, referencias a assets, selección y de
 ## Estructura Del Proyecto
 
 ```text
-core/       Lógica del juego: eventos, efectos, estado, sesión y transiciones.
-data/       Eventos y motivos de derrota en JSON.
-docs/       Documentación técnica y formato de datos.
-rendering/  Renderizado de cartas, stats y elementos visuales.
-resources/  Imágenes, iconos, sonidos y fuentes.
-screens/    Pantallas de menú, tutorial, ajustes, intro y créditos.
-scripts/    Utilidades de validación y generación de assets.
-tests/      Tests automáticos de datos y lógica.
-ui/         Componentes básicos de interfaz.
+src/sevilla_reigns/
+  main/              Arranque de Pygame y coordinación de pantallas.
+  config/            Rutas, estado runtime y tema visual.
+  domain/entities/   Entidades puras del juego.
+  application/       Casos de uso, sesión, decisiones y carga de contenido.
+  infrastructure/    Audio y transiciones Pygame.
+  presentation/      Pantallas, renderizado y componentes UI.
+data/                Eventos y motivos de derrota en JSON.
+assets/              Imágenes, iconos, sonidos y fuentes.
+scripts/             Utilidades de validación y generación de assets.
+tests/               Tests automáticos de datos y lógica.
+docs/                Documentación técnica, assets y auditoría.
 ```
 
 ## Contenido Y Assets
 
 - Los eventos están definidos en `data/eventos.json`.
 - Los motivos de derrota están definidos en `data/motivos_muerte.json`.
-- Las imágenes referenciadas por los JSON deben existir en `resources/images/`.
-- Los iconos y frames animados están en `resources/icons/`.
-- Los sonidos están en `resources/sounds/`.
-- Las fuentes locales están en `resources/fonts/`.
+- Las imágenes referenciadas por los JSON deben existir en `assets/images/`.
+- Los iconos y frames animados están en `assets/icons/`.
+- Los sonidos están en `assets/sounds/`.
+- Las fuentes locales están en `assets/fonts/`.
 
 ## Documentación
 
 - Formato de eventos y datos: `docs/data_format.md`.
+- Arquitectura y capas: `docs/architecture.md`.
 - Atribución y origen de assets: `docs/ASSETS.md`.
 - Auditoría de estructura, arquitectura y mejoras pendientes: `docs/REPOSITORY_AUDIT.md`.

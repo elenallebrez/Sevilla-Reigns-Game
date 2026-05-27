@@ -6,8 +6,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET_ROOT = ROOT / "resources" / "icons" / "pygame" / "intro"
-FONT_PATH = ROOT / "resources" / "fonts" / "Cinzel-Bold.ttf"
+TARGET_ROOT = ROOT / "assets" / "icons" / "pygame" / "intro"
+FONT_PATH = ROOT / "assets" / "fonts" / "Cinzel-Bold.ttf"
 
 COBALT = (9, 45, 134, 255)
 GOLD = (246, 205, 116, 255)

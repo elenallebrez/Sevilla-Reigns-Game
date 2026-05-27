@@ -1,6 +1,6 @@
 import json
 
-from core.event_manager import EventManager
+from sevilla_reigns.application.event_manager import EventManager
 
 
 def write_events(tmp_path, events):

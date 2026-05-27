@@ -1,5 +1,5 @@
-from core.decision_resolver import resolve_decision
-from core.game_state import GameState
+from sevilla_reigns.application.decision_resolver import resolve_decision
+from sevilla_reigns.domain.entities.game_state import GameState
 
 
 class FakeEventManager:

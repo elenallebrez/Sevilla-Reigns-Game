@@ -1,4 +1,4 @@
-from core.settings_state import DEFAULT_VOLUME, SettingsState
+from sevilla_reigns.application.settings_state import DEFAULT_VOLUME, SettingsState
 
 
 def test_settings_state_defaults_to_mid_volume():

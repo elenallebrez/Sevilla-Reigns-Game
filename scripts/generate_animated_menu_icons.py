@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ICON_ROOT = ROOT / "resources" / "icons"
+ICON_ROOT = ROOT / "assets" / "icons"
 ANIMATED_ROOT = ICON_ROOT / "animated"
 STATIC_ROOT = ICON_ROOT / "static"
 SIZE = 64

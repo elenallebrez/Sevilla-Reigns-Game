@@ -1,5 +1,5 @@
-from core.effects import apply_effects, get_end_stat
-from core.game_state import GameState, get_default_stats
+from sevilla_reigns.application.effects import apply_effects, get_end_stat
+from sevilla_reigns.domain.entities.game_state import GameState, get_default_stats
 
 
 def test_apply_effects_updates_known_stats():

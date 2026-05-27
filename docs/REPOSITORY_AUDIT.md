@@ -11,7 +11,7 @@
 | Most urgent improvements | Add CI/Ruff config, add broader asset fallbacks for audio/fonts, improve README with screenshots and architecture notes, and add optional Pygame smoke tests. |
 | Portfolio readiness | Better than the original audit state, but still needs CI, screenshots/GIF, explicit architecture docs, and a bit more UI polish before it looks strong for recruiters. |
 
-The project is understandable and playable in concept: it is a Reigns-style decision game set in Sevilla, backed by `data/eventos.json` and visual/audio assets under `resources/`. The repository is now closer to a maintainable small Pygame project: startup, routing, session state, rendering, tests, and data validation are separated enough to support the next round of growth.
+The project is understandable and playable in concept: it is a Reigns-style decision game set in Sevilla, backed by `data/eventos.json` and visual/audio assets under `assets/`. The repository is now closer to a maintainable small Pygame project: startup, routing, session state, rendering, tests, and data validation are separated enough to support the next round of growth.
 
 ## 2. Repository Structure and Naming
 
@@ -45,7 +45,7 @@ Sevilla-Reigns-Game/
   data/
     eventos.json
     motivos_muerte.json
-  resources/
+  assets/
     fonts/
     images/
     sounds/
@@ -72,9 +72,9 @@ Sevilla-Reigns-Game/
 
 ### What Is Good
 
-- `core/`, `screens/`, `ui/`, `data/`, and `resources/` communicate the broad purpose of each area.
+- `core/`, `screens/`, `ui/`, `data/`, and `assets/` communicate the broad purpose of each area.
 - JSON content is separated from code in `data/`.
-- Assets are separated by type under `resources/images`, `resources/sounds`, and `resources/fonts`.
+- Assets are separated by type under `assets/images`, `assets/sounds`, and `assets/fonts`.
 - `requirements.txt` and `.gitignore` exist.
 - `__pycache__` files are no longer part of the intended source structure.
 
@@ -142,7 +142,7 @@ Sevilla-Reigns-Game/
     motivos_muerte.json
     event_schema.json
 
-  resources/
+  assets/
     fonts/
     images/
     sounds/
@@ -527,7 +527,7 @@ No disk save/load behavior exists. That is acceptable for a small arcade-style g
 
 - Several PNGs are large: `cruzcampo_bancarrota.png` is about 3.9 MB; many others are above 3 MB.
 - `draw_event` loads and scales the event image every frame. This is the most important performance issue in the repo.
-- Asset paths are often hardcoded relative strings: `"resources/images/..."`.
+- Asset paths are often hardcoded relative strings: `"assets/images/..."`.
 - Naming style is inconsistent across assets.
 - There is no manifest or asset loader.
 
@@ -800,11 +800,11 @@ Recommendations:
 
 | Task | Why It Matters | Files Affected | Estimated Difficulty |
 | --- | --- | --- | --- |
-| Normalize asset filenames | Improves searchability and consistency | `resources/images/*`, `data/eventos.json`, `data/motivos_muerte.json` | Medium |
+| Normalize asset filenames | Improves searchability and consistency | `assets/images/*`, `data/eventos.json`, `data/motivos_muerte.json` | Medium |
 | Add stat labels and delta feedback | Makes gameplay clearer | `rendering/stats_renderer.py`, `app.py` | Medium | Sí |
-| Add README screenshots/GIF | Improves recruiter presentation | `README.md`, `docs/` or `resources/` | Low |
+| Add README screenshots/GIF | Improves recruiter presentation | `README.md`, `docs/` or `assets/` | Low |
 | Add keyboard menu navigation | Improves accessibility and polish | `ui/button.py`, `screens/start_screen.py` | Medium | Sí |
-| Compress large PNGs | Reduces repo size and load time | `resources/images/*.png` | Low |
+| Compress large PNGs | Reduces repo size and load time | `assets/images/*.png` | Low |
 | Add `LICENSE` | Clarifies reuse rights | `LICENSE` | Low |
 
 ## 17. Suggested Final Repository Structure
@@ -869,7 +869,7 @@ Sevilla-Reigns-Game/
     motivos_muerte.json
     event_schema.json
 
-  resources/
+  assets/
     fonts/
     images/
     sounds/

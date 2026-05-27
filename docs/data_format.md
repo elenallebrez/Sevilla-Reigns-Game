@@ -13,7 +13,7 @@ Each event in `data/eventos.json` must include:
 
 Optional event fields:
 
-- `image`: filename under `resources/images/`.
+- `image`: filename under `assets/images/`.
 - `requisitos`: list of event IDs that must be unlocked before this event can appear.
 
 Each option must include:
@@ -59,11 +59,11 @@ Follow-up events are only unlocked if the player chooses the option containing `
 Each death reason must include:
 
 - `motivo`: text shown on the final screen.
-- `imagen`: filename under `resources/images/`.
+- `imagen`: filename under `assets/images/`.
 
 ## Assets
 
-Image filenames should use lowercase snake_case. Every image referenced by JSON must exist under `resources/images/`.
+Image filenames should use lowercase snake_case. Every image referenced by JSON must exist under `assets/images/`.
 
 ## Validation
 
