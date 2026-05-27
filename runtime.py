@@ -3,8 +3,10 @@ import pygame
 import config
 
 
-DISPLAY_FONT_PATH = config.RESOURCE_PATH / "fonts" / "Sevillana-Regular.ttf"
-BODY_FONT_CANDIDATES = ("georgia", "segoeui", "arial")
+def load_font(path, size: int, bold: bool = False) -> pygame.font.Font:
+    font = pygame.font.Font(str(path), size)
+    font.set_bold(bold)
+    return font
 
 
 def initialize_pygame(fullscreen=True):
@@ -18,13 +20,18 @@ def initialize_pygame(fullscreen=True):
     config.WIDTH, config.HEIGHT = config.screen.get_size()
     pygame.display.set_caption("Tú Verás Lo Que Haces")
 
-    body_font_path = _get_body_font_path()
-    display_font_path = str(DISPLAY_FONT_PATH if DISPLAY_FONT_PATH.exists() else body_font_path)
+    config.FONT_TITLE = load_font(config.CINZEL_BOLD_PATH, 68, bold=True)
+    config.FONT_EVENT_TITLE = load_font(config.CINZEL_SEMIBOLD_PATH, 40, bold=True)
+    config.FONT_BUTTON = load_font(config.CINZEL_SEMIBOLD_PATH, 22, bold=True)
+    config.FONT_BODY = load_font(config.CORMORANT_REGULAR_PATH, 28)
+    config.FONT_BODY_MEDIUM = load_font(config.CORMORANT_MEDIUM_PATH, 30)
+    config.FONT_SMALL = load_font(config.CORMORANT_REGULAR_PATH, 23)
+    config.FONT_CATEGORY = load_font(config.CINZEL_SEMIBOLD_PATH, 20, bold=True)
 
-    config.SUPER_FONT = pygame.font.Font(display_font_path, 84)
-    config.BIG_FONT = pygame.font.Font(body_font_path, 46)
-    config.MEDIUM_FONT = pygame.font.Font(body_font_path, 34)
-    config.FONT = pygame.font.Font(body_font_path, 26)
+    config.SUPER_FONT = config.FONT_TITLE
+    config.BIG_FONT = config.FONT_EVENT_TITLE
+    config.MEDIUM_FONT = config.FONT_BODY_MEDIUM
+    config.FONT = config.FONT_BODY
 
     config.icons_empty = {
         "religion": pygame.image.load(str(config.IMG_PATH / "religion3.png")),
@@ -42,12 +49,3 @@ def initialize_pygame(fullscreen=True):
 
     config.clock = pygame.time.Clock()
     return config.screen
-
-
-def _get_body_font_path() -> str:
-    for font_name in BODY_FONT_CANDIDATES:
-        font_path = pygame.font.match_font(font_name)
-        if font_path:
-            return font_path
-
-    return str(config.FONT_PATH)
