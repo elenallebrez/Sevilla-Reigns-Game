@@ -1,12 +1,17 @@
 from pathlib import Path
 
-import pygame
-
 BASE_PATH = Path(__file__).resolve().parent
 DATA_PATH = BASE_PATH / "data"
 RESOURCE_PATH = BASE_PATH / "resources"
 IMG_PATH = RESOURCE_PATH / "images"
+ICON_PATH = RESOURCE_PATH / "icons"
 FONT_PATH = RESOURCE_PATH / "fonts" / "andalus.ttf"
+CINZEL_REGULAR_PATH = RESOURCE_PATH / "fonts" / "Cinzel-Regular.ttf"
+CINZEL_SEMIBOLD_PATH = RESOURCE_PATH / "fonts" / "Cinzel-SemiBold.ttf"
+CINZEL_BOLD_PATH = RESOURCE_PATH / "fonts" / "Cinzel-Bold.ttf"
+CORMORANT_REGULAR_PATH = RESOURCE_PATH / "fonts" / "CormorantGaramond-Regular.ttf"
+CORMORANT_MEDIUM_PATH = RESOURCE_PATH / "fonts" / "CormorantGaramond-Medium.ttf"
+CORMORANT_SEMIBOLD_PATH = RESOURCE_PATH / "fonts" / "CormorantGaramond-SemiBold.ttf"
 
 FPS = 60
 
@@ -15,6 +20,14 @@ BLACK = (0, 0, 0)
 BG_COLOR = (230, 220, 200)
 BAR_COLOR = (100, 200, 100)
 BLUE_AZULEJO = (9, 45, 134)
+ALBERO = (246, 205, 116)
+ALBERO_LIGHT = (255, 235, 174)
+CAL_WHITE = (255, 252, 244)
+CARD_IVORY = (255, 249, 232)
+CLAVEL_RED = (166, 36, 42)
+OLIVE_GREEN = (74, 112, 66)
+INK = (38, 29, 23)
+TILE_SHADOW = (45, 35, 24)
 
 WIDTH = 0
 HEIGHT = 0
@@ -25,44 +38,13 @@ SUPER_FONT = None
 BIG_FONT = None
 MEDIUM_FONT = None
 FONT = None
+FONT_TITLE = None
+FONT_EVENT_TITLE = None
+FONT_BUTTON = None
+FONT_BODY = None
+FONT_BODY_MEDIUM = None
+FONT_SMALL = None
+FONT_CATEGORY = None
 
 icons_empty = {}
 icons_mask = {}
-
-
-def initialize_pygame(fullscreen=True):
-    global WIDTH, HEIGHT, screen, clock
-    global SUPER_FONT, BIG_FONT, MEDIUM_FONT, FONT
-    global icons_empty, icons_mask
-
-    if screen is not None:
-        return screen
-
-    pygame.init()
-
-    flags = pygame.FULLSCREEN if fullscreen else 0
-    screen = pygame.display.set_mode((0, 0), flags)
-    WIDTH, HEIGHT = screen.get_size()
-    pygame.display.set_caption("Tú Verás Lo Que Haces")
-
-    SUPER_FONT = pygame.font.Font(str(FONT_PATH), 80)
-    BIG_FONT = pygame.font.Font(str(FONT_PATH), 48)
-    MEDIUM_FONT = pygame.font.Font(str(FONT_PATH), 36)
-    FONT = pygame.font.Font(str(FONT_PATH), 28)
-
-    icons_empty = {
-        "religion": pygame.image.load(str(IMG_PATH / "religion3.png")),
-        "people": pygame.image.load(str(IMG_PATH / "people3.png")),
-        "money": pygame.image.load(str(IMG_PATH / "money3.png")),
-        "army": pygame.image.load(str(IMG_PATH / "army3.png")),
-    }
-
-    icons_mask = {
-        "religion": pygame.image.load(str(IMG_PATH / "religionSil.png")),
-        "people": pygame.image.load(str(IMG_PATH / "peopleSil.png")),
-        "money": pygame.image.load(str(IMG_PATH / "moneySil.png")),
-        "army": pygame.image.load(str(IMG_PATH / "armySil.png")),
-    }
-
-    clock = pygame.time.Clock()
-    return screen

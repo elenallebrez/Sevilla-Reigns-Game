@@ -26,8 +26,7 @@ class GameApp:
     def __init__(self):
         from core.sounds import reproducir_musica
         from core.transition import slide_transition
-        from rendering.card_renderer import draw_event
-        from rendering.stats_renderer import draw_stats
+        from rendering.card_renderer import draw_event, get_choice_index_at_pos
         from screens.modal_screens import (
             show_exit_confirmation,
             show_final_screen,
@@ -49,7 +48,7 @@ class GameApp:
         self.reproducir_musica = reproducir_musica
         self.slide_transition = slide_transition
         self.draw_event = draw_event
-        self.draw_stats = draw_stats
+        self.get_choice_index_at_pos = get_choice_index_at_pos
         self.show_exit_confirmation = show_exit_confirmation
         self.show_final_screen = show_final_screen
         self.show_reelection_screen = show_reelection_screen
@@ -94,7 +93,7 @@ class GameApp:
                 config.screen,
                 config.WIDTH,
                 config.HEIGHT,
-                config.FONT,
+                config.FONT_BUTTON,
                 config.SUPER_FONT,
                 self.background,
             )
@@ -104,18 +103,18 @@ class GameApp:
                 config.screen,
                 config.WIDTH,
                 config.HEIGHT,
-                config.FONT,
+                config.FONT_BODY,
                 self.background,
                 self.settings_state,
             )
 
-        return handler(config.screen, config.WIDTH, config.HEIGHT, config.FONT, self.background)
+        return handler(config.screen, config.WIDTH, config.HEIGHT, config.FONT_BODY, self.background)
 
     def run_game_loop(self):
         intro_result = self.show_intro_card(
             config.screen,
-            config.FONT,
-            config.BIG_FONT,
+            config.FONT_SMALL,
+            config.FONT_BODY_MEDIUM,
             config.WIDTH,
             config.HEIGHT,
             self.background,
@@ -135,8 +134,7 @@ class GameApp:
             config.clock.tick(config.FPS)
             config.screen.blit(self.background, (0, 0))
 
-            self.draw_stats(config.screen, self.session.game_state, self.session.last_effects)
-            self.draw_event(config.screen, current_event, swipe_offset)
+            self.draw_event(config.screen, current_event, swipe_offset, self.session.game_state)
             pygame.display.flip()
 
             route = self._handle_game_input(current_event, swipe_direction)
@@ -173,7 +171,19 @@ class GameApp:
         for pygame_event in pygame.event.get():
             if pygame_event.type == pygame.QUIT:
                 return routes.QUIT
-            if pygame_event.type != pygame.KEYDOWN or swipe_direction != 0:
+            if swipe_direction != 0:
+                continue
+
+            if pygame_event.type == pygame.MOUSEBUTTONDOWN and pygame_event.button == 1:
+                option_index = self.get_choice_index_at_pos(config.screen, pygame_event.pos)
+                if option_index is None:
+                    continue
+                page_sound.play()
+                effects = resolve_decision(self.event_manager, self.session.game_state, event, option_index)
+                self.session.last_effects = effects
+                return LEFT_DIRECTION if option_index == LEFT_OPTION else RIGHT_DIRECTION
+
+            if pygame_event.type != pygame.KEYDOWN:
                 continue
 
             if pygame_event.key == pygame.K_LEFT:
@@ -242,5 +252,5 @@ class GameApp:
         surface.fill((0, 0, 0))
 
     def _load_background(self):
-        background = pygame.image.load(str(config.IMG_PATH / "fondo.png"))
+        background = pygame.image.load(str(config.IMG_PATH / "fondo_sevillano.png"))
         return pygame.transform.scale(background, (config.WIDTH, config.HEIGHT))
